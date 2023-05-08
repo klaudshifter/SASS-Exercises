@@ -1,0 +1,55 @@
+$primary-color: green;
+$secondary-color: blue;
+$border-color: red;
+$article-color-1: blue;
+$article-color-2: red;
+$article-color-3: green;
+
+body {
+  border: 2px solid $border-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  
+  h1 {
+    color: $primary-color;
+    text-decoration: underline $secondary-color;
+  }
+  
+  section {
+    &:first-of-type {
+      display: flex;
+      justify-content: center;
+      article {
+        border: 2px solid $primary-color;
+        padding: 10px;
+        width: 25%;
+        &:nth-of-type(1),
+        &:nth-of-type(3) {
+          color: $article-color-1;
+        }
+        &:nth-of-type(2),
+        &:nth-of-type(4) {
+          color: $article-color-2;
+        }
+      }
+    }
+    
+    &:last-of-type {
+      display: flex;
+      justify-content: center;
+      article {
+        border: 2px solid $article-color-3;
+        margin: 10px;
+        padding: 10px;
+        width: 100%;
+        &:nth-of-type(5) {
+          color: $article-color-3;
+        }
+      }
+    }
+  }
+}
